@@ -1,0 +1,30 @@
+﻿@model dorknozzle.Models.PomocTechnicznaKategorie
+
+@{
+    ViewBag.Title = "Usuń kategorię";
+    Layout = "~/Views/Shared/_LayoutDorknozzle.cshtml";
+}
+
+<h3>Czy jesteś pewien, że chcesz usunąć kategorię?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nazwa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nazwa)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Usuń" class="btn btn-danger" /> |
+            @Html.ActionLink("Wróć do listy", "Index")
+        </div>
+    }
+</div>

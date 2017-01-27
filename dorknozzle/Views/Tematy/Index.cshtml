@@ -1,0 +1,41 @@
+﻿@model IEnumerable<dorknozzle.Models.PomocTechnicznaTematy>
+
+@{
+    ViewBag.Title = "Lista tematów";
+    Layout = "~/Views/Shared/_LayoutDorknozzle.cshtml";
+}
+
+<h3>Lista tematów</h3>
+
+<p>
+    @Html.ActionLink("Dodaj temat", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Nazwa tematu")
+        </th>
+        <th>
+            @Html.DisplayName("Nazwa kategorii")
+        </th>
+        <th>
+            @Html.DisplayName("Opcje")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink(item.Nazwa, "Edit", new { id = item.TematId })
+        </td>
+        <td>
+            @Html.DisplayName(item.PomocTechnicznaKategorie.Nazwa)
+        </td>
+        <td>
+            @Html.ActionLink("Usuń", "Delete", new { id=item.TematId })
+        </td>
+    </tr>
+}
+
+</table>

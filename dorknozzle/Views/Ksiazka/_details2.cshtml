@@ -1,0 +1,64 @@
+﻿@model dorknozzle.Models.ViewModel.PelnyOpisPracownikaViewModel
+
+<div>
+    <h4>Szczegóły pracownika: @Model.PełnaNazwa</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PełnaNazwa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PełnaNazwa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dział)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dział)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Login)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Login)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adres)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adres)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Miasto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Miasto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TelefonStacjonarny)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelefonStacjonarny)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TelefonKomorkowy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelefonKomorkowy)
+        </dd>
+
+    </dl>
+</div>

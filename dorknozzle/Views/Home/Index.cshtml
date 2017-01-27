@@ -1,0 +1,27 @@
+﻿@model IEnumerable<dorknozzle.Models.Wiadomosc>
+@using dorknozzle.Models
+
+
+@{
+    ViewBag.Title = "Wiadomości";
+}
+
+<div class="jumbotron">
+    <h1>Informacje dla pracowników</h1>
+    <p class="lead">krótka informacja krótka informacja krótka informacja krótka informacja krótka informacja krótka informacja krótka informacja krótka informacja </p>
+    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Czytaj więcej &raquo;</a></p>
+</div>
+
+<div class="row">
+    @foreach (Wiadomosc item in Model)
+    {
+        <div class="col-md-4">
+            <h2>@item.Subject</h2>
+            <p>
+                @item.ShortContent
+            </p>
+            <p>@Html.ActionLink("Czytaj więcej", "Index", "Home", new { id = @item.WiadomoscId}, null)</p>
+        </div>
+    }
+
+</div>

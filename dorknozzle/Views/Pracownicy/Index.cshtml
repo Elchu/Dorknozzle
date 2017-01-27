@@ -1,0 +1,88 @@
+﻿@model IEnumerable<dorknozzle.Models.Pracownicy>
+@section styles
+{
+    <link href="//cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+}
+@{
+    ViewBag.Title = "Lista pracowników";
+    Layout = "~/Views/Shared/_LayoutDorknozzle.cshtml";
+}
+
+<h3>Lista pracowników</h3>
+<hr/>
+<table class="table table-striped table-hover" id="listaPracownikow">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Dział")
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Imie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nazwisko)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Adres)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Miasto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TelefonDomowy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TelefonKomorkowy)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Dzialy.Nazwa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Imie)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nazwisko)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Adres)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Miasto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TelefonDomowy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TelefonKomorkowy)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section scripts
+{
+<script type="text/javascript" src='//cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js'></script>
+
+<script type="text/javascript">
+
+        $("document").ready(function ()
+        {
+            $("#listaPracownikow").DataTable({
+                "paging": true,
+                "ordering": true,
+                "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]],
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.10.10/i18n/Polish.json"
+                }
+            });
+        });//zakonczenie funkcji ready
+
+</script>
+}

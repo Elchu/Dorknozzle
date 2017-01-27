@@ -1,0 +1,97 @@
+﻿@model IEnumerable<dorknozzle.Models.ViewModel.KsiazkaAdresowaViewModel>
+
+@section styles
+{
+    <link href="//cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+}
+@{
+    ViewBag.Title = "Lista adresów";
+    Layout = "~/Views/Shared/_LayoutDorknozzle.cshtml";
+}
+
+<h3>Lista adresów</h3>
+<hr/>
+<table class="table" id="ksiazkaAdresowa">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PełnaNazwa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Adres)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Miasto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TelefonKomorkowy)
+            </th>
+            <th>Opcje</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PełnaNazwa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Adres)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Miasto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TelefonKomorkowy)
+                </td>
+                <td>
+                    @Html.ActionLink("Wybierz", "Details", new { id = item.PracownicyId }, htmlAttributes: new { @class = "wybierz" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br/>
+<br/>
+<div id="result" style="display: none">
+
+</div>
+
+@section scripts
+{
+    <script type="text/javascript" src='//cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js'></script>
+    
+    <script type="text/javascript">
+        
+        $("document").ready(function ()
+        {
+            $("#ksiazkaAdresowa").DataTable({
+                "paging": true,
+                "ordering": true,
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.10.10/i18n/Polish.json"
+                }
+            });
+
+            $(".wybierz").on("click", function (event) {
+                event.preventDefault();
+
+                var url = $(this).attr("href");
+                var idPracownika = url.substr(url.lastIndexOf("/") + 1);
+
+                $.ajax({
+                    url: url,
+                    success: function (data) {
+                        $("#result").empty().hide();
+                        $("#result").html(data).show("slow");
+                    },
+                    error: function (response) {
+                        alert(response.responseText);
+                    }
+                });
+
+            });
+        });
+    </script>
+}

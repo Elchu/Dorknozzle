@@ -1,0 +1,17 @@
+﻿@using dorknozzle.Models
+@model dorknozzle.Models.Wiadomosc
+
+@{
+    ViewBag.Title = "Pojedyncza wiadomość";
+    Layout = "~/Views/Shared/_LayoutDorknozzle.cshtml";
+}
+
+<div class="row">
+        <div class="col-md-12">
+            <h2>@Model.Subject</h2>
+            <p>
+                @Model.Content
+            </p>
+        </div>
+</div>
+

@@ -1,0 +1,43 @@
+﻿@model dorknozzle.Models.Wiadomosc
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutDorknozzle.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Wiadomosc</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Subject)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Subject)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShortContent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShortContent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Content)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Content)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.WiadomoscId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

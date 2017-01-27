@@ -1,0 +1,329 @@
+﻿@{
+    ViewBag.Title = "Panel administracyjny";
+    Layout = "~/Views/Shared/_LayoutDorknozzle.cshtml";
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Panel administracyjny</h3>
+    </div>
+    <div class="panel-body">
+        <div role="tabpanel">
+
+            @*poczatek accordion*@
+            <div class="panel-group" id="AdminAccordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+
+                    <div class="panel-heading" role="tab" id="kategorie">
+                        <h4 class="panel-title">
+                            <a role="button" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                                Panel - Zarządzaj kategoriami
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="kategorie">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <a href="@Url.Action("Create", "Kategorie")" class="thumbnail">
+                                        <img src="@Url.Content("~/Content/Images/AdminIco/Bookmark-add-icon.png")" alt="Utwórz rolę">
+                                        <div class="caption text-center">
+                                            <h5>Dodaj kategorię</h5>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-2">
+                                    <a href="@Url.Action("Index", "Kategorie")" class="thumbnail">
+                                        <img src="@Url.Content("~/Content/Images/AdminIco/Bookmark-add-icon.png")" alt="Utwórz rolę">
+                                        <div class="caption text-center">
+                                            <h5>Przeglądaj kategorię</h5>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="tematy">
+                        <h4 class="panel-title">
+                            <a role="button" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                Panel - Zarządzaj tematami
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="tematy">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <a href="@Url.Action("Create", "Tematy")" class="thumbnail">
+                                        <img src="@Url.Content("~/Content/Images/AdminIco/Bookmark-add-icon.png")" alt="Utwórz rolę">
+                                        <div class="caption text-center">
+                                            <h5>Dodaj temat</h5>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-2">
+                                    <a href="@Url.Action("Index", "Tematy")" class="thumbnail">
+                                        <img src="@Url.Content("~/Content/Images/AdminIco/Bookmark-add-icon.png")" alt="Utwórz rolę">
+                                        <div class="caption text-center">
+                                            <h5>Przeglądaj tematy</h5>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="ksiazka">
+                        <h4 class="panel-title">
+                            <a role="button" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseKsiazka" aria-expanded="false" aria-controls="collapseKsiazka">
+                                Panel - Zarządzaj książką adresową
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseKsiazka" class="panel-collapse collapse" role="tabpanel" aria-labelledby="ksiazka">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <a href="@Url.Action("Index", "Ksiazka")" class="thumbnail">
+                                        <img src="@Url.Content("~/Content/Images/AdminIco/Bookmark-add-icon.png")" alt="Utwórz rolę">
+                                        <div class="caption text-center">
+                                            <h5>Książka adresowa </h5>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="panel panel-default">
+
+                    <div class="panel-heading" role="tab" id="dzial">
+                        <h4 class="panel-title">
+                            <a role="button" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseDzial" aria-expanded="false" aria-controls="collapseDzial">
+                                Panel - Zarządzaj działami
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseDzial" class="panel-collapse collapse" role="tabpanel" aria-labelledby="dzial">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <a href="@Url.Action("Create", "Dzialy")" class="thumbnail">
+                                        <img src="@Url.Content("~/Content/Images/AdminIco/Bookmark-add-icon.png")" alt="Utwórz rolę">
+                                        <div class="caption text-center">
+                                            <h5>Dodaj dział</h5>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-2">
+                                    <a href="@Url.Action("Index", "Dzialy")" class="thumbnail">
+                                        <img src="@Url.Content("~/Content/Images/AdminIco/Bookmark-add-icon.png")" alt="Utwórz rolę">
+                                        <div class="caption text-center">
+                                            <h5>Przeglądaj działy</h5>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="panel panel-default">
+
+                    <div class="panel-heading" role="tab" id="pracownicy">
+                        <h4 class="panel-title">
+                            <a role="button" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapsePracownicy" aria-expanded="false" aria-controls="collapsePracownicy">
+                                Panel - Zarządzaj pracownikami
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapsePracownicy" class="panel-collapse collapse" role="tabpanel" aria-labelledby="pracownicy">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <a href="@Url.Action("Create", "Pracownicy")" class="thumbnail">
+                                        <img src="@Url.Content("~/Content/Images/AdminIco/Bookmark-add-icon.png")" alt="Utwórz rolę">
+                                        <div class="caption text-center">
+                                            <h5>Uzupełnij profil</h5>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-2">
+                                    <a href="@Url.Action("Index", "Pracownicy")" class="thumbnail">
+                                        <img src="@Url.Content("~/Content/Images/AdminIco/Bookmark-add-icon.png")" alt="Utwórz rolę">
+                                        <div class="caption text-center">
+                                            <h5>Przeglądaj pracowników</h5>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="zgloszenie">
+                        <h4 class="panel-title">
+                            <a role="button" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseZgloszenie" aria-expanded="false" aria-controls="collapseZgloszenie">
+                                Panel - Zarządzaj zgłoszeniami
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseZgloszenie" class="panel-collapse collapse" role="tabpanel" aria-labelledby="zgloszenie">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <a href="@Url.Action("Index", "PomocTechniczna")" class="thumbnail">
+                                        <img src="@Url.Content("~/Content/Images/AdminIco/Bookmark-add-icon.png")" alt="Utwórz rolę">
+                                        <div class="caption text-center">
+                                            <h5>Przeglądaj zgłoszenia</h5>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="newsletter">
+                        <h4 class="panel-title">
+                            <a role="button" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseNewsletter" aria-expanded="false" aria-controls="collapseNewsletter">
+                                Panel - Zarządzaj Newsletter
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseNewsletter" class="panel-collapse collapse" role="tabpanel" aria-labelledby="newsletter">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <a href="@Url.Action("Send", "Newsletter")" class="thumbnail">
+                                        <img src="@Url.Content("~/Content/Images/AdminIco/Bookmark-add-icon.png")" alt="Utwórz rolę">
+                                        <div class="caption text-center">
+                                            <h5>Wyślij newsletter pojedynczy</h5>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-2">
+                                    <a href="@Url.Action("SendAll", "Newsletter")" class="thumbnail">
+                                        <img src="@Url.Content("~/Content/Images/AdminIco/Bookmark-add-icon.png")" alt="Utwórz rolę">
+                                        <div class="caption text-center">
+                                            <h5>Wyślij newsletter wszystkim</h5>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="wiadomosci">
+                        <h4 class="panel-title">
+                            <a role="button" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseWiadomosci" aria-expanded="false" aria-controls="collapseWiadomosci">
+                                Panel - Zarządzaj Wiadomościami
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseWiadomosci" class="panel-collapse collapse" role="tabpanel" aria-labelledby="newsletter">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <a href="@Url.Action("Create", "Wiadomosc")" class="thumbnail">
+                                        <img src="@Url.Content("~/Content/Images/AdminIco/Bookmark-add-icon.png")" alt="Utwórz rolę">
+                                        <div class="caption text-center">
+                                            <h5>Dodaj wiadomość</h5>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-2">
+                                    <a href="@Url.Action("Index", "Wiadomosc")" class="thumbnail">
+                                        <img src="@Url.Content("~/Content/Images/AdminIco/Bookmark-add-icon.png")" alt="Utwórz rolę">
+                                        <div class="caption text-center">
+                                            <h5>Przeglądaj wiadomości</h5>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingTwo">
+                        <h4 class="panel-title">
+                            <a role="button" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                Panel - Zarządzaj rolami
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <a href="@Url.Action("UtworzRole", "Admin")" class="thumbnail">
+                                        <img src="@Url.Content("~/Content/Images/AdminIco/Bookmark-add-icon.png")" alt="Utwórz rolę">
+                                        <div class="caption text-center">
+                                            <h5>Utwórz rolę</h5>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-2">
+                                    <a href="@Url.Action("ListaRol", "Admin")" class="thumbnail">
+                                        <img src="@Url.Content("~/Content/Images/AdminIco/Inventory-icon.png")" alt="Lista ról">
+                                        <div class="caption text-center">
+                                            <h5>Lista ról</h5>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-2">
+                                    <a href="@Url.Action("DodajRoleDoUzytkownika", "Admin")" class="thumbnail">
+                                        <img src="@Url.Content("~/Content/Images/AdminIco/Actions-list-add-user-icon.png")" alt="Dodaj rolę użytkownikowi">
+                                        <div class="caption text-center">
+                                            <h5>Dodaj rolę użytkownikowi</h5>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-2">
+                                    <a href="@Url.Action("UsunRoleUzytkownikowi", "Admin")" class="thumbnail">
+                                        <img src="@Url.Content("~/Content/Images/AdminIco/Actions-user-group-delete-icon.png")" alt="Usuń rolę użytkownikowi">
+                                        <div class="caption text-center">
+                                            <h5>Usuń rolę użytkownikowi</h5>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-2">
+                                    <a href="@Url.Action("WyswietlRoleUzytkownika", "Admin")" class="thumbnail">
+                                        <img src="@Url.Content("~/Content/Images/AdminIco/Groups-Meeting-Dark-icon.png")" alt="Wyświetl rolę użytkownika">
+                                        <div class=" caption text-center">
+                                            <h5>Wyświetl rolę użytkownika</h5>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>@*koniec accordion*@
+        </div>
+    </div>
+</div>
+
+
+@section scripts
+{
+    <script>
+        $(function () {
+            $('#AdminAccordion').collapse({
+                toggle: true,
+                parent: false
+            });
+        })
+    </script>
+}

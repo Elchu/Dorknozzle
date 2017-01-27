@@ -1,0 +1,33 @@
+﻿@model IEnumerable<dorknozzle.Models.PomocTechnicznaKategorie>
+
+@{
+    ViewBag.Title = "Lista kategorii";
+    Layout = "~/Views/Shared/_LayoutDorknozzle.cshtml";
+}
+
+<h3>Lista kategorii</h3>
+
+<p>
+    @Html.ActionLink("Dodaj kategorię", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nazwa)
+        </th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink(item.Nazwa, "Edit", new { id = item.KategoriaId })
+        </td>
+        <td>
+            @Html.ActionLink("Usuń", "Delete", new { id=item.KategoriaId })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<dorknozzle.Models.Pracownicy>
+
+
+<table class="table table-bordered" id="listaPracownikow">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Imie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nazwisko)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Adres)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Miasto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TelefonDomowy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TelefonKomorkowy)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Imie)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nazwisko)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Adres)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Miasto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TelefonDomowy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TelefonKomorkowy)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

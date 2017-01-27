@@ -1,0 +1,41 @@
+﻿@model dorknozzle.Models.Dzialy
+
+@using (Html.BeginForm())
+{
+ <!-- Modal -->
+    <div class="modal fade" id="UsunDzialModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Usuń dział</h4>
+                </div>
+                <div class="modal-body">
+
+                    @Html.AntiForgeryToken()
+
+                    <h3>Czy jeseś pewien, że chcesz usunąć dział?</h3>
+                    <div>
+                        <hr />
+                        <dl class="dl-horizontal">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Nazwa)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Nazwa)
+                            </dd>
+
+                        </dl>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Zamknij</button>
+                        <input type="submit" value="Usuń" class="btn btn-danger" />
+                    </div>
+
+                </div>@*modal-body*@
+            </div>@*modal-content*@
+        </div>@*modal-dialog*@
+    </div>@*modal*@
+}

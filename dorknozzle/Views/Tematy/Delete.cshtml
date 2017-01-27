@@ -1,0 +1,38 @@
+﻿@model dorknozzle.Models.PomocTechnicznaTematy
+
+@{
+    ViewBag.Title = "Usuń temat";
+    Layout = "~/Views/Shared/_LayoutDorknozzle.cshtml";
+}
+
+<h3>Czy jesteś pewien, że chcesz usunąć temat??</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PomocTechnicznaKategorie.Nazwa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PomocTechnicznaKategorie.Nazwa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nazwa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nazwa)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            @Html.ActionLink("Wróć do listy", "Index")
+        </div>
+    }
+</div>

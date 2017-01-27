@@ -1,0 +1,86 @@
+﻿@model dorknozzle.Models.PomocTechniczna
+
+@{
+    ViewBag.Title = "Usuń zgłoszenie";
+    Layout = "~/Views/Shared/_LayoutDorknozzle.cshtml";
+}
+
+<h3>Czy jesteś pewien, że chcesz usunąć zgłoszenie?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PomocTechnicznaKategorie.Nazwa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PomocTechnicznaKategorie.Nazwa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PomocTechnicznaTematy.Nazwa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PomocTechnicznaTematy.Nazwa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NunerStanowiska)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NunerStanowiska)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdresIp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdresIp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataZgloszenia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataZgloszenia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Opis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Opis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Usuń" class="btn btn-danger" /> |
+            @Html.ActionLink("Wróć do listy", "Index")
+        </div>
+    }
+</div>

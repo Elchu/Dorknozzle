@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Dorknozzle</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("styles", false)
+</head>
+<body>
+
+    <div class="container">
+        <header id="header">
+            <div class="row">
+                <div class="col-md-8 headerImage">
+
+                </div>
+                <div class="col-md-4">
+                    @Html.Partial("_LoginPartial")
+                </div>
+            </div>
+        </header>
+
+        <div class="row">
+
+            <div class="col-md-2">
+                <nav>
+                    <ul class="navImage">
+                        <li><a href="@Url.Content("/")">Strona główna</a></li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li><a href="@Url.Action("Create", "Pracownicy")">Uzupełnij profil</a></li>
+                        }
+                        <li><a href="@Url.Action("Create", "PomocTechniczna")">Pomoc techniczna</a></li>
+                        <li><a href="@Url.Action("Index", "Pracownicy")">Pracownicy</a></li>
+                        <li><a href="@Url.Action("Index", "Ksiazka")">Książka adresowa</a></li>
+                        <li><a href="@Url.Action("Index", "Dzialy")">Działy</a></li>
+                        @if (User.IsInRole("admin"))
+                        {
+                            <li><a href="@Url.Action("Index", "Admin")">Narzędzia administracyjne</a></li>
+                        }
+
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="col-md-10">
+                @if (@TempData["Message"] != null)
+                {
+                    <div class="alert alert-success">
+                        @TempData["Message"]
+                    </div>
+                }
+
+                @if (@TempData["Error"] != null)
+                {
+                    <div class="alert alert-success">
+                        @TempData["Error"]
+                    </div>
+                }
+
+                @RenderBody()
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <footer class="text-center">
+                    <p>&copy; @DateTime.Now.Year - Dorknozzle</p>
+                </footer>
+            </div>
+        </div>
+
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

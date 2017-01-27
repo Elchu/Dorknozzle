@@ -1,0 +1,76 @@
+﻿@model IEnumerable<dorknozzle.Models.PomocTechniczna>
+
+@{
+    ViewBag.Title = "Lista zgłoszeń";
+    Layout = "~/Views/Shared/_LayoutDorknozzle.cshtml";
+}
+
+<h3>Lista zgłoszeń</h3>
+
+<p>
+    @Html.ActionLink("Dodaj zgłoszenie", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Podkategoria")
+        </th>
+        <th>
+            @Html.DisplayName("Kategoria")
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NunerStanowiska)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdresIp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataZgloszenia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Opis)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink(item.PomocTechnicznaTematy.Nazwa, "Edit", new { id = item.PomocTechnicznaId }) 
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PomocTechnicznaKategorie.Nazwa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NunerStanowiska)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdresIp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataZgloszenia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Opis)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.ActionLink("Edytuj", "Edit", new { id = item.PomocTechnicznaId }) |
+            @Html.ActionLink("Szczegóły", "Details", new { id=item.PomocTechnicznaId }) |
+            @Html.ActionLink("Usuń", "Delete", new { id=item.PomocTechnicznaId })
+        </td>
+    </tr>
+}
+
+</table>
